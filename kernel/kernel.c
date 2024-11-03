@@ -1,5 +1,6 @@
 #include "../include/stddef.h"
 #include "../drivers/vga.h"
+#include "main.h"
 
 /* Check if the compiler thinks you are targeting the wrong operating system. */
 #if defined(__linux__)
