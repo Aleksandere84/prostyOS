@@ -1,3 +1,7 @@
 /.vscode
 /build
 /prostyos.iso
+*.o
+*.bin
+*.iso
+*.out

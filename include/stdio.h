@@ -1,0 +1,1 @@
+printf(char* string_to_print);

@@ -11,7 +11,7 @@
 #error "This tutorial needs to be compiled with a ix86-elf compiler"
 #endif
 
-void kernel_main(void) 
+void kernel_main(void)
 {
 	/* Initialize terminal interface */
 	vga_initialize();
