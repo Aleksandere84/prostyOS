@@ -7,7 +7,7 @@ build:
 	grub-mkrescue -o prostyos.iso build
 
 clean:
-	rm -rf build
+	rm -rf *.o
 	rm prostyos.iso
 
 run:

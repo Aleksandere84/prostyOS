@@ -23,26 +23,27 @@ void vga_set_color(uint8_t color) {
     vga_color = color;
 }
 
-void vga_put_char(char c)
-{
-    if (c == '\n')
-    {
+void vga_put_char(char c) {
+    if (c == '\n') {
         vga_row++;
         vga_column = 0;
+
+        if (vga_row == VGA_HEIGHT) {
+            vga_scroll();
+        }
         return;
     }
-    
+
     vga_buffer[vga_row * VGA_WIDTH + vga_column] = vga_entry(c, vga_color);
-   
-    if (++vga_column == VGA_WIDTH) 
-    {
+
+    if (++vga_column == VGA_WIDTH) {
         vga_column = 0;
-        if (++vga_row == VGA_HEIGHT) 
-        {
-            vga_row = 0;
+        vga_row++;
+        
+        if (vga_row == VGA_HEIGHT) {
+            vga_scroll();
         }
     }
-    
 }
 
 void vga_print_string(const char* str) {
